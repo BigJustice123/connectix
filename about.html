@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Connectix | About Us</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <style>
+    /* Base Styles */
+    body {
+      margin: 0;
+      font-family: 'Outfit', sans-serif;
+      background-color: #0f172a;
+      color: #e2e8f0;
+      animation: fadeIn 1.2s ease-in;
+      overflow-x: hidden;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background-color: #1e293b;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .menu-wrapper {
+      position: relative;
+      display: inline-block;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #fde68a;
+      text-decoration: none;
+      user-select: none;
+    }
+
+    .menu-toggle {
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: #facc15;
+      user-select: none;
+      border: none;
+      background: none;
+    }
+
+    nav {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: #0f172a;
+      border-radius: 8px;
+      display: none;
+      flex-direction: column;
+      min-width: 140px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+      z-index: 150;
+    }
+
+    nav.show {
+      display: flex;
+    }
+
+    nav a {
+      padding: 0.75rem 1.5rem;
+      color: #facc15;
+      text-decoration: none;
+      border-bottom: 1px solid #1e293b;
+      transition: background-color 0.3s ease;
+      font-weight: 600;
+    }
+
+    nav a:last-child {
+      border-bottom: none;
+    }
+
+    nav a:hover {
+      background-color: #1e293b;
+    }
+
+    /* Main Content */
+    main {
+      max-width: 900px;
+      margin: 4rem auto 6rem;
+      padding: 0 1rem;
+    }
+
+    h1 {
+      font-size: 3rem;
+      color: #fde68a;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      text-align: center;
+      text-shadow: 0 0 10px rgba(253, 230, 138, 0.7);
+    }
+
+    .intro {
+      font-size: 1.3rem;
+      line-height: 1.6;
+      color: #d1d5db;
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 3rem;
+      text-shadow:
+        1px 1px 2px rgba(0, 0, 0, 0.5);
+    }
+
+    .story-section {
+      background: #1e293b;
+      padding: 2.5rem 2rem;
+      border-radius: 12px;
+      margin-bottom: 3rem;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+      user-select: text;
+    }
+
+    .story-section h2 {
+      color: #facc15;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      font-size: 2rem;
+      text-shadow: 0 0 6px rgba(250, 204, 21, 0.8);
+    }
+
+    .story-section p {
+      font-size: 1.125rem;
+      color: #e0e7ff;
+      line-height: 1.7;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #1e293b;
+      padding: 2rem;
+      text-align: center;
+      color: #94a3b8;
+      user-select: none;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2.25rem;
+      }
+
+      .story-section {
+        padding: 1.75rem 1.25rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="menu-wrapper">
+      <button class="menu-toggle" aria-label="Toggle Menu" onclick="toggleMenu()">☰</button>
+      <nav id="dropdown-menu" aria-label="Primary Navigation">
+        <a href="about.html" aria-current="page">About</a>
+        <a href="services.html">Services</a>
+        <a href="team.html">Team</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+    <a href="index.html" class="logo">connectix</a>
+  </header>
+
+  <main>
+    <h1 data-aos="fade-down">About Connectix</h1>
+    <p class="intro" data-aos="fade-up" data-aos-delay="150">
+      Bridging the gap between NYC’s vibrant local businesses and top-tier international marketing experts, Connectix
+      empowers your brand to thrive in a global market — while staying true to your community’s unique spirit.
+    </p>
+
+    <section class="story-section" data-aos="fade-right" data-aos-delay="300">
+      <h2>Our Story</h2>
+      <p>
+        As a local NYC kid, I witnessed firsthand how many small businesses struggled to keep pace with modern marketing
+        trends. Despite incredible products and services, they often fell behind due to lack of resources, expertise, or
+        time. Connectix was born from this insight — to connect these passionate businesses with world-class marketing
+        professionals, blending local knowledge with international expertise to elevate every brand’s potential.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Connectix Marketing. All rights reserved.</p>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+    function toggleMenu() {
+      const menu = document.getElementById('dropdown-menu');
+      menu.classList.toggle('show');
+    }
+
+    // Close menu if clicking outside
+    window.addEventListener('click', function (e) {
+      const menu = document.getElementById('dropdown-menu');
+      const toggle = document.querySelector('.menu-toggle');
+      if (!menu.contains(e.target) && !toggle.contains(e.target)) {
+        menu.classList.remove('show');
+      }
+    });
+  </script>
+</body>
+
+</html>

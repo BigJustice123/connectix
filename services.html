@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Connectix | Services</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <style>
+    /* Base Styles */
+    body {
+      margin: 0;
+      font-family: 'Outfit', sans-serif;
+      background-color: #0f172a;
+      color: #e2e8f0;
+      animation: fadeIn 1.2s ease-in;
+      overflow-x: hidden;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background-color: #1e293b;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .menu-wrapper {
+      position: relative;
+      display: inline-block;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #fde68a;
+      text-decoration: none;
+      user-select: none;
+    }
+
+    .menu-toggle {
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: #facc15;
+      user-select: none;
+      border: none;
+      background: none;
+    }
+
+    nav {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: #0f172a;
+      border-radius: 8px;
+      display: none;
+      flex-direction: column;
+      min-width: 160px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+      z-index: 150;
+    }
+
+    nav.show {
+      display: flex;
+    }
+
+    nav a {
+      padding: 0.75rem 1.5rem;
+      color: #facc15;
+      text-decoration: none;
+      border-bottom: 1px solid #1e293b;
+      transition: background-color 0.3s ease;
+      font-weight: 600;
+    }
+
+    nav a:last-child {
+      border-bottom: none;
+    }
+
+    nav a:hover {
+      background-color: #1e293b;
+    }
+
+    /* Main Content */
+    main {
+      max-width: 900px;
+      margin: 4rem auto 6rem;
+      padding: 0 1rem;
+    }
+
+    h1 {
+      font-size: 3rem;
+      color: #fde68a;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      text-align: center;
+      text-shadow: 0 0 10px rgba(253, 230, 138, 0.7);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2.5rem;
+    }
+
+    .service-card {
+      background: #1e293b;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+      transition: transform 0.3s ease;
+      cursor: default;
+      user-select: text;
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+    }
+
+    .service-card h3 {
+      color: #facc15;
+      margin-bottom: 1rem;
+      font-weight: 700;
+      text-shadow: 0 0 6px rgba(250, 204, 21, 0.8);
+    }
+
+    .service-card p {
+      font-size: 1.125rem;
+      line-height: 1.6;
+      color: #e0e7ff;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #1e293b;
+      padding: 2rem;
+      text-align: center;
+      color: #94a3b8;
+      user-select: none;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2.25rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="menu-wrapper">
+      <button class="menu-toggle" aria-label="Toggle Menu" onclick="toggleMenu()">☰</button>
+      <nav id="dropdown-menu" aria-label="Primary Navigation">
+        <a href="about.html">About</a>
+        <a href="services.html" aria-current="page">Services</a>
+        <a href="team.html">Team</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+    <a href="index.html" class="logo">connectix</a>
+  </header>
+
+  <main>
+    <h1 data-aos="fade-down">Our Marketing Services</h1>
+    <div class="services-grid">
+      <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+        <h3>Brand Identity & Rebranding</h3>
+        <p>Craft a powerful and memorable brand that truly represents your business values and vision.</p>
+      </div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+        <h3>Social Media Strategy & Management</h3>
+        <p>Engage your audience with tailored content, campaigns, and consistent online presence.</p>
+      </div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+        <h3>Search Engine Optimization (SEO)</h3>
+        <p>Increase your website’s visibility and rank higher on Google to attract more customers.</p>
+      </div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+        <h3>Content Creation & Copywriting</h3>
+        <p>Produce compelling blog posts, ads, newsletters, and website copy that converts.</p>
+      </div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="500">
+        <h3>Paid Advertising Campaigns (PPC)</h3>
+        <p>Target your ideal customers efficiently through platforms like Google Ads and social media ads.</p>
+      </div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="600">
+        <h3>Influencer & Partnership Marketing</h3>
+        <p>Leverage the power of influencers and strategic partnerships to expand your reach.</p>
+      </div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="700">
+        <h3>International Market Expansion</h3>
+        <p>Connect with marketing experts worldwide to grow your business beyond NYC borders.</p>
+      </div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="800">
+        <h3>AI-Driven Marketing Analytics</h3>
+        <p>Utilize cutting-edge AI tools to analyze, optimize, and innovate your marketing strategies.</p>
+      </div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="900">
+        <h3>Email Marketing & Automation</h3>
+        <p>Keep your audience engaged and convert leads through effective email campaigns and workflows.</p>
+      </div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="1000">
+        <h3>Website & UX Design</h3>
+        <p>Create stunning, user-friendly websites that keep visitors coming back.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Connectix Marketing. All rights reserved.</p>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+    function toggleMenu() {
+      const menu = document.getElementById('dropdown-menu');
+      menu.classList.toggle('show');
+    }
+
+    // Close menu if clicking outside
+    window.addEventListener('click', function (e) {
+      const menu = document.getElementById('dropdown-menu');
+      const toggle = document.querySelector('.menu-toggle');
+      if (!menu.contains(e.target) && !toggle.contains(e.target)) {
+        menu.classList.remove('show');
+      }
+    });
+  </script>
+</body>
+
+</html>

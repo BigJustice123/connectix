@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Connectix | Home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Outfit', sans-serif;
+      background-color: #0f172a;
+      color: #e2e8f0;
+      animation: fadeIn 1.2s ease-in;
+      overflow-x: hidden;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background-color: #1e293b;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .menu-wrapper {
+      position: relative;
+      display: inline-block;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #fde68a;
+      text-decoration: none;
+      user-select: none;
+    }
+
+    .menu-toggle {
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: #facc15;
+      user-select: none;
+      border: none;
+      background: none;
+    }
+
+    nav {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: #0f172a;
+      border-radius: 8px;
+      display: none;
+      flex-direction: column;
+      min-width: 140px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+      z-index: 150;
+    }
+
+    nav.show {
+      display: flex;
+    }
+
+    nav a {
+      padding: 0.75rem 1.5rem;
+      color: #facc15;
+      text-decoration: none;
+      border-bottom: 1px solid #1e293b;
+      transition: background-color 0.3s ease;
+      font-weight: 600;
+    }
+
+    nav a:last-child {
+      border-bottom: none;
+    }
+
+    nav a:hover {
+      background-color: #1e293b;
+    }
+
+    /* GIF background banner styles */
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 1rem;
+      background: url('https://i.pinimg.com/originals/ba/1f/56/ba1f566c60579fd93ab162d374daec3f.gif') no-repeat center center/cover;
+      filter: brightness(0.55);
+      user-select: none;
+    }
+
+    .hero .content {
+      max-width: 600px;
+      color: #ffffff;
+      z-index: 1;
+      user-select: text;
+      position: relative;
+      text-shadow:
+        2px 2px 6px rgba(0, 0, 0, 0.85),
+        0 0 10px rgba(0, 0, 0, 0.7);
+    }
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  color: #fde68a;
+  text-shadow:
+    0 0 12px rgba(253, 230, 138, 0.8),
+    3px 3px 8px rgba(0, 0, 0, 0.9),
+    0 0 15px rgba(0, 0, 0, 0.8);
+}
+
+
+    .hero p {
+      font-size: 1.2rem;
+      line-height: 1.5;
+      font-weight: 600;
+      color: #fefefe;
+      text-shadow:
+        2px 2px 6px rgba(0, 0, 0, 0.85),
+        0 0 10px rgba(0, 0, 0, 0.7);
+    }
+
+    /* Features section */
+    .features {
+      display: flex;
+      justify-content: space-around;
+      padding: 4rem 2rem;
+      gap: 2rem;
+      background: #1e293b;
+      flex-wrap: wrap;
+    }
+
+    .feature-card {
+      background: #0f172a;
+      border-radius: 1rem;
+      padding: 2rem;
+      text-align: center;
+      max-width: 300px;
+      transition: transform 0.3s ease;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      cursor: default;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .feature-card .icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #fde047;
+      user-select: none;
+    }
+
+    /* Footer styles */
+    footer {
+      background-color: #1e293b;
+      padding: 2rem;
+      text-align: center;
+      color: #94a3b8;
+      user-select: none;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .features {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="menu-wrapper">
+      <button class="menu-toggle" aria-label="Toggle Menu" onclick="toggleMenu()">☰</button>
+      <nav id="dropdown-menu" aria-label="Primary Navigation">
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="team.html">Team</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+    <a href="index.html" class="logo">connectix</a>
+  </header>
+
+  <section class="hero">
+    <div class="content">
+      <h1>Marketing That Moves With You</h1>
+      <p>We connect NYC's local businesses with world-class marketing professionals. Whether you need a rebrand,
+        a social strategy, or international reach—we're your bridge to bigger things. We also utilize cutting-edge
+        tools like AI to ensure your campaigns are both innovative and efficient.</p>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+      <div class="icon">✨</div>
+      <h3>AI-Driven Strategy</h3>
+      <p>From content to analytics, we integrate intelligent tools to boost performance and efficiency.</p>
+    </div>
+    <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+      <div class="icon">🌐</div>
+      <h3>Global Expertise</h3>
+      <p>Access marketing specialists from around the world, tailored to your local business needs.</p>
+    </div>
+    <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+      <div class="icon">🎯</div>
+      <h3>Local Focus</h3>
+      <p>We understand NYC culture, trends, and what makes your neighborhood audience tick.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Connectix Marketing. All rights reserved.</p>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+    function toggleMenu() {
+      const menu = document.getElementById('dropdown-menu');
+      menu.classList.toggle('show');
+    }
+
+    // Close menu if clicking outside
+    window.addEventListener('click', function (e) {
+      const menu = document.getElementById('dropdown-menu');
+      const toggle = document.querySelector('.menu-toggle');
+      if (!menu.contains(e.target) && !toggle.contains(e.target)) {
+        menu.classList.remove('show');
+      }
+    });
+  </script>
+</body>
+
+</html>

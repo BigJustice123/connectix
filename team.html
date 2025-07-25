@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Connectix | Our Team</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <style>
+    /* Base Styles */
+    body {
+      margin: 0;
+      font-family: 'Outfit', sans-serif;
+      background-color: #0f172a;
+      color: #e2e8f0;
+      animation: fadeIn 1.2s ease-in;
+      overflow-x: hidden;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background-color: #1e293b;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .menu-wrapper {
+      position: relative;
+      display: inline-block;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #fde68a;
+      text-decoration: none;
+      user-select: none;
+    }
+
+    .menu-toggle {
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: #facc15;
+      user-select: none;
+      border: none;
+      background: none;
+    }
+
+    nav {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: #0f172a;
+      border-radius: 8px;
+      display: none;
+      flex-direction: column;
+      min-width: 140px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+      z-index: 150;
+    }
+
+    nav.show {
+      display: flex;
+    }
+
+    nav a {
+      padding: 0.75rem 1.5rem;
+      color: #facc15;
+      text-decoration: none;
+      border-bottom: 1px solid #1e293b;
+      transition: background-color 0.3s ease;
+      font-weight: 600;
+    }
+
+    nav a:last-child {
+      border-bottom: none;
+    }
+
+    nav a:hover {
+      background-color: #1e293b;
+    }
+
+    /* Main Content */
+    main {
+      max-width: 1000px;
+      margin: 4rem auto 6rem;
+      padding: 0 1rem;
+    }
+
+    h1 {
+      font-size: 3rem;
+      color: #fde68a;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      text-align: center;
+      text-shadow: 0 0 10px rgba(253, 230, 138, 0.7);
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2.5rem;
+    }
+
+    .team-member {
+      background: #1e293b;
+      border-radius: 12px;
+      padding: 2rem 1.5rem 2.5rem;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+      text-align: center;
+      user-select: text;
+      transition: transform 0.3s ease;
+      cursor: default;
+    }
+
+    .team-member:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+    }
+
+    .member-photo {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background-color: #334155;
+      margin: 0 auto 1rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 3rem;
+      color: #94a3b8;
+      user-select: none;
+      box-shadow: 0 0 15px rgba(250, 204, 21, 0.7);
+      overflow: hidden;
+    }
+
+    .member-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      display: block;
+    }
+
+    .member-name {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #fde68a;
+      margin-bottom: 0.3rem;
+      text-shadow: 0 0 5px rgba(253, 230, 138, 0.7);
+    }
+
+    .member-role {
+      font-size: 1rem;
+      font-weight: 500;
+      color: #facc15;
+      margin-bottom: 1rem;
+    }
+
+    .member-bio {
+      font-size: 1rem;
+      color: #d1d5db;
+      line-height: 1.5;
+      margin: 0 auto;
+      max-width: 260px;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #1e293b;
+      padding: 2rem;
+      text-align: center;
+      color: #94a3b8;
+      user-select: none;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2.25rem;
+      }
+
+      .team-member {
+        padding: 1.5rem 1rem 2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="menu-wrapper">
+      <button class="menu-toggle" aria-label="Toggle Menu" onclick="toggleMenu()">☰</button>
+      <nav id="dropdown-menu" aria-label="Primary Navigation">
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="team.html" aria-current="page">Team</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+    <a href="index.html" class="logo">connectix</a>
+  </header>
+
+  <main>
+    <h1 data-aos="fade-down">Meet Our Team</h1>
+    <div class="team-grid">
+      <!-- Team Member 1 -->
+      <div class="team-member" data-aos="fade-up" data-aos-delay="100">
+        <div class="member-photo" aria-label="Photo placeholder for John Doe">JD</div>
+        <div class="member-name">John Doe</div>
+        <div class="member-role">Lead Strategist</div>
+        <div class="member-bio">
+          John brings over 10 years of experience crafting innovative marketing strategies that fuel growth and brand
+          recognition worldwide.
+        </div>
+      </div>
+
+      <!-- Team Member 2 -->
+      <div class="team-member" data-aos="fade-up" data-aos-delay="200">
+        <div class="member-photo" aria-label="Photo placeholder for Sarah Lee">SL</div>
+        <div class="member-name">Sarah Lee</div>
+        <div class="member-role">Social Media Manager</div>
+        <div class="member-bio">
+          Expert in social engagement and content creation, Sarah builds authentic connections between brands and their
+          audiences.
+        </div>
+      </div>
+
+      <!-- Team Member 3 -->
+      <div class="team-member" data-aos="fade-up" data-aos-delay="300">
+        <div class="member-photo" aria-label="Photo placeholder for David Kim">DK</div>
+        <div class="member-name">David Kim</div>
+        <div class="member-role">SEO Specialist</div>
+        <div class="member-bio">
+          David leverages data-driven SEO tactics to maximize online visibility and organic search traffic for clients.
+        </div>
+      </div>
+
+      <!-- Team Member 4 -->
+      <div class="team-member" data-aos="fade-up" data-aos-delay="400">
+        <div class="member-photo" aria-label="Photo placeholder for Mia Chen">MC</div>
+        <div class="member-name">Mia Chen</div>
+        <div class="member-role">Content Creator</div>
+        <div class="member-bio">
+          Mia crafts compelling narratives and visuals that captivate audiences and amplify brand stories across
+          platforms.
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Connectix Marketing. All rights reserved.</p>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+    function toggleMenu() {
+      const menu = document.getElementById('dropdown-menu');
+      menu.classList.toggle('show');
+    }
+
+    // Close menu if clicking outside
+    window.addEventListener('click', function (e) {
+      const menu = document.getElementById('dropdown-menu');
+      const toggle = document.querySelector('.menu-toggle');
+      if (!menu.contains(e.target) && !toggle.contains(e.target)) {
+        menu.classList.remove('show');
+      }
+    });
+  </script>
+</body>
+
+</html>
